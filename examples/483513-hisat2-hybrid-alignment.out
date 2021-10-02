@@ -1,0 +1,676 @@
+source /etc/profile.d/modules.sh
+Loading HISAT2 & Samtools 1.9
+======================================================================================
+SLURM_CHECKPOINT_IMAGE_DIR=/var/slurm/checkpoint
+SLURM_NODELIST=lx11
+SLURM_JOB_NAME=HISAT2_hybrid_alignment
+MANPATH=/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/samtools-1.9-jt3wqevyys7j23kbd5hhw6wyqy7husvi/share/man:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/bzip2-1.0.8-htanaf6lwllsbmyp5blqrw4p7oumoeqd/man:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/htslib-1.9-63u3uewd7gbbs5tyzsnw5hzjib2dja2v/share/man:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/xz-5.2.4-34oyu4x6dzjhputuhgiy5dvx2ngrxusl/share/man:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/zlib-1.2.11-dduf4e5ed6sfqrgo2rkshdzqeojlywvg/share/man:/usr/share/lmod/lmod/share/man::
+XDG_SESSION_ID=75963
+_ModuleTable003_=LjEuMC1nY2MtNy4yLjAtYnJhZHdqNiIsWyJsb2FkT3JkZXIiXT0xLHByb3BUPXt9LFsic2hvcnQiXT0iaGlzYXQyLTIuMS4wLWdjYy03LjIuMC1icmFkd2o2IixbInN0YXR1cyJdPSJhY3RpdmUiLH0sWyJodHNsaWItMS45LWdjYy05LjIuMC02M3UzdWV3Il09e1siRk4iXT0iL2N0YS9hcHBzL3NoYXJlL3NwYWNrL21vZHVsZXMvbGludXgtdWJ1bnR1MTYuMDQtaXZ5YnJpZGdlL2h0c2xpYi0xLjktZ2NjLTkuMi4wLTYzdTN1ZXciLFsiZGVmYXVsdCJdPTAsWyJmdWxsTmFtZSJdPSJodHNsaWItMS45LWdjYy05LjIuMC02M3UzdWV3IixbImxvYWRPcmRlciJdPTQscHJvcFQ9e30sWyJzaG9ydCJdPSJodHNsaWItMS45LWdjYy05LjIuMC02M3UzdWV3IixbInN0YXR1cyJdPSJhY3Rp
+SLURMD_NODENAME=lx11
+SLURM_TOPOLOGY_ADDR=lx11
+HOSTNAME=lx11
+SLURM_NTASKS_PER_NODE=20
+SLURM_PRIO_PROCESS=0
+SLURM_NODE_ALIASES=(null)
+SHELL=/bin/bash
+TERM=xterm
+SLURM_JOB_QOS=mid
+LMOD_DEFAULT_MODULEPATH=/cta/apps/share/spack/modules/linux-ubuntu16.04-x86_64:/cta/apps/share/spack/modules/linux-ubuntu16.04-ivybridge:/usr/modulefiles/Linux:/usr/modulefiles/Core:/usr/share/lmod/lmod/modulefiles/Core
+TMPDIR=/tmp
+SLURM_TOPOLOGY_ADDR_PATTERN=node
+SSH_CLIENT=10.50.120.74 60405 22
+MODULEPATH_ROOT=/usr/modulefiles
+LIBRARY_PATH=/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/samtools-1.9-jt3wqevyys7j23kbd5hhw6wyqy7husvi/lib:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/ncurses-6.1-6mg5k75pxa2xpge34s4wgj7d52r4dkva/lib:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/bzip2-1.0.8-htanaf6lwllsbmyp5blqrw4p7oumoeqd/lib:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/htslib-1.9-63u3uewd7gbbs5tyzsnw5hzjib2dja2v/lib:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/xz-5.2.4-34oyu4x6dzjhputuhgiy5dvx2ngrxusl/lib:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/zlib-1.2.11-dduf4e5ed6sfqrgo2rkshdzqeojlywvg/lib
+LMOD_PKG=/usr/share/lmod/lmod
+SSH_TTY=/dev/pts/4
+_ModuleTable007_=L2xpbnV4LXVidW50dTE2LjA0LXg4Nl82NCIsIi9jdGEvYXBwcy9zaGFyZS9zcGFjay9tb2R1bGVzL2xpbnV4LXVidW50dTE2LjA0LWl2eWJyaWRnZSIsIi91c3IvbW9kdWxlZmlsZXMvTGludXgiLCIvdXNyL21vZHVsZWZpbGVzL0NvcmUiLCIvdXNyL3NoYXJlL2xtb2QvbG1vZC9tb2R1bGVmaWxlcy9Db3JlIix9LFsic3lzdGVtQmFzZU1QQVRIIl09Ii9jdGEvYXBwcy9zaGFyZS9zcGFjay9tb2R1bGVzL2xpbnV4LXVidW50dTE2LjA0LXg4Nl82NDovY3RhL2FwcHMvc2hhcmUvc3BhY2svbW9kdWxlcy9saW51eC11YnVudHUxNi4wNC1pdnlicmlkZ2U6L3Vzci9tb2R1bGVmaWxlcy9MaW51eDovdXNyL21vZHVsZWZpbGVzL0NvcmU6L3Vzci9zaGFyZS9sbW9kL2xtb2QvbW9kdWxl
+SLURM_MEM_PER_CPU=12500
+SLURM_NNODES=1
+USER=hhakanoglu
+LMOD_sys=Linux
+LD_LIBRARY_PATH=/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/samtools-1.9-jt3wqevyys7j23kbd5hhw6wyqy7husvi/lib:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/ncurses-6.1-6mg5k75pxa2xpge34s4wgj7d52r4dkva/lib:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/bzip2-1.0.8-htanaf6lwllsbmyp5blqrw4p7oumoeqd/lib:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/htslib-1.9-63u3uewd7gbbs5tyzsnw5hzjib2dja2v/lib:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/xz-5.2.4-34oyu4x6dzjhputuhgiy5dvx2ngrxusl/lib:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/zlib-1.2.11-dduf4e5ed6sfqrgo2rkshdzqeojlywvg/lib:/tmp/root/spack-stage/spack-stage-cGSuOr/ncbi_cxx--21_0_0/local/ncbi-vdb-2.8.2/lib64::
+_ModuleTable004_=dmUiLH0sWyJuY3Vyc2VzLTYuMS1nY2MtOS4yLjAtNm1nNWs3NSJdPXtbIkZOIl09Ii9jdGEvYXBwcy9zaGFyZS9zcGFjay9tb2R1bGVzL2xpbnV4LXVidW50dTE2LjA0LXg4Nl82NC9uY3Vyc2VzLTYuMS1nY2MtOS4yLjAtNm1nNWs3NSIsWyJkZWZhdWx0Il09MCxbImZ1bGxOYW1lIl09Im5jdXJzZXMtNi4xLWdjYy05LjIuMC02bWc1azc1IixbImxvYWRPcmRlciJdPTYscHJvcFQ9e30sWyJzaG9ydCJdPSJuY3Vyc2VzLTYuMS1nY2MtOS4yLjAtNm1nNWs3NSIsWyJzdGF0dXMiXT0iYWN0aXZlIix9LFsic2FtdG9vbHMtMS45LWdjYy05LjIuMC1qdDN3cWV2Il09e1siRk4iXT0iL2N0YS9hcHBzL3NoYXJlL3NwYWNrL21vZHVsZXMvbGludXgtdWJ1bnR1MTYuMDQtaXZ5YnJpZGdl
+CPATH=/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/samtools-1.9-jt3wqevyys7j23kbd5hhw6wyqy7husvi/include:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/ncurses-6.1-6mg5k75pxa2xpge34s4wgj7d52r4dkva/include:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/bzip2-1.0.8-htanaf6lwllsbmyp5blqrw4p7oumoeqd/include:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/htslib-1.9-63u3uewd7gbbs5tyzsnw5hzjib2dja2v/include:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/xz-5.2.4-34oyu4x6dzjhputuhgiy5dvx2ngrxusl/include:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/zlib-1.2.11-dduf4e5ed6sfqrgo2rkshdzqeojlywvg/include
+SLURM_JOBID=483513
+SLURM_NTASKS=20
+LMOD_IGNORE_CACHE=1
+LMOD_PREPEND_BLOCK=normal
+_ModuleTable001_=X01vZHVsZVRhYmxlXz17WyJhY3RpdmVTaXplIl09NyxiYXNlTXBhdGhBPXsiL2N0YS9hcHBzL3NoYXJlL3NwYWNrL21vZHVsZXMvbGludXgtdWJ1bnR1MTYuMDQteDg2XzY0IiwiL2N0YS9hcHBzL3NoYXJlL3NwYWNrL21vZHVsZXMvbGludXgtdWJ1bnR1MTYuMDQtaXZ5YnJpZGdlIiwiL3Vzci9tb2R1bGVmaWxlcy9MaW51eCIsIi91c3IvbW9kdWxlZmlsZXMvQ29yZSIsIi91c3Ivc2hhcmUvbG1vZC9sbW9kL21vZHVsZWZpbGVzL0NvcmUiLH0sWyJjX3JlYnVpbGRUaW1lIl09ZmFsc2UsWyJjX3Nob3J0VGltZSJdPWZhbHNlLGZhbWlseT17fSxpbmFjdGl2ZT17fSxtVD17WyJiemlwMi0xLjAuOC1nY2MtOS4yLjAtaHRhbmFmNiJdPXtbIkZOIl09Ii9jdGEvYXBwcy9zaGFyZS9z
+SLURM_TASKS_PER_NODE=20
+PATH=/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/samtools-1.9-jt3wqevyys7j23kbd5hhw6wyqy7husvi/bin:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/ncurses-6.1-6mg5k75pxa2xpge34s4wgj7d52r4dkva/bin:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/bzip2-1.0.8-htanaf6lwllsbmyp5blqrw4p7oumoeqd/bin:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/htslib-1.9-63u3uewd7gbbs5tyzsnw5hzjib2dja2v/bin:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/xz-5.2.4-34oyu4x6dzjhputuhgiy5dvx2ngrxusl/bin:/cta/apps/opt/spack/linux-ubuntu16.04-x86_64/gcc-7.2.0/hisat2-2.1.0-bradwj6td5r6chzooylumjyf5c75fq2p:/cta/apps/opt/spack/linux-ubuntu16.04-x86_64/gcc-7.2.0/hisat2-2.1.0-bradwj6td5r6chzooylumjyf5c75fq2p/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/cta/apps/scripts
+MAIL=/var/mail/hhakanoglu
+SLURM_JOB_ID=483513
+LMOD_SETTARG_CMD=:
+SLURM_JOB_USER=hhakanoglu
+PWD=/cta/users/hhakanoglu/amel_rnaseq_1001/raw_reads
+_LMFILES_=/cta/apps/share/spack/modules/linux-ubuntu16.04-x86_64/hisat2-2.1.0-gcc-7.2.0-bradwj6:/cta/apps/share/spack/modules/linux-ubuntu16.04-x86_64/zlib-1.2.11-gcc-9.2.0-dduf4e5:/cta/apps/share/spack/modules/linux-ubuntu16.04-ivybridge/xz-5.2.4-gcc-9.2.0-34oyu4x:/cta/apps/share/spack/modules/linux-ubuntu16.04-ivybridge/htslib-1.9-gcc-9.2.0-63u3uew:/cta/apps/share/spack/modules/linux-ubuntu16.04-x86_64/bzip2-1.0.8-gcc-9.2.0-htanaf6:/cta/apps/share/spack/modules/linux-ubuntu16.04-x86_64/ncurses-6.1-gcc-9.2.0-6mg5k75:/cta/apps/share/spack/modules/linux-ubuntu16.04-ivybridge/samtools-1.9-gcc-9.2.0-jt3wqev
+CUDA_VISIBLE_DEVICES=NoDevFiles
+LANG=en_US.UTF-8
+MODULEPATH=/cta/apps/share/spack/modules/linux-ubuntu16.04-x86_64:/cta/apps/share/spack/modules/linux-ubuntu16.04-ivybridge:/usr/modulefiles/Linux:/usr/modulefiles/Core:/usr/share/lmod/lmod/modulefiles/Core
+_ModuleTable_Sz_=8
+LOADEDMODULES=hisat2-2.1.0-gcc-7.2.0-bradwj6:zlib-1.2.11-gcc-9.2.0-dduf4e5:xz-5.2.4-gcc-9.2.0-34oyu4x:htslib-1.9-gcc-9.2.0-63u3uew:bzip2-1.0.8-gcc-9.2.0-htanaf6:ncurses-6.1-gcc-9.2.0-6mg5k75:samtools-1.9-gcc-9.2.0-jt3wqev
+SLURM_JOB_UID=1000196
+SLURM_NODEID=0
+SLURM_SUBMIT_DIR=/cta/users/hhakanoglu/amel_rnaseq_1001/raw_reads
+_ModuleTable005_=L3NhbXRvb2xzLTEuOS1nY2MtOS4yLjAtanQzd3FldiIsWyJkZWZhdWx0Il09MCxbImZ1bGxOYW1lIl09InNhbXRvb2xzLTEuOS1nY2MtOS4yLjAtanQzd3FldiIsWyJsb2FkT3JkZXIiXT03LHByb3BUPXt9LFsic2hvcnQiXT0ic2FtdG9vbHMtMS45LWdjYy05LjIuMC1qdDN3cWV2IixbInN0YXR1cyJdPSJhY3RpdmUiLH0sWyJ4ei01LjIuNC1nY2MtOS4yLjAtMzRveXU0eCJdPXtbIkZOIl09Ii9jdGEvYXBwcy9zaGFyZS9zcGFjay9tb2R1bGVzL2xpbnV4LXVidW50dTE2LjA0LWl2eWJyaWRnZS94ei01LjIuNC1nY2MtOS4yLjAtMzRveXU0eCIsWyJkZWZhdWx0Il09MCxbImZ1bGxOYW1lIl09Inh6LTUuMi40LWdjYy05LjIuMC0zNG95dTR4IixbImxvYWRPcmRlciJdPTMscHJv
+SLURM_TASK_PID=8416
+SLURM_NPROCS=20
+LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
+SLURM_CPUS_ON_NODE=20
+SLURM_PROCID=0
+ENVIRONMENT=BATCH
+SLURM_JOB_NODELIST=lx11
+HOME=/cta/users/hhakanoglu
+SHLVL=2
+SLURM_LOCALID=0
+_ModuleTable002_=cGFjay9tb2R1bGVzL2xpbnV4LXVidW50dTE2LjA0LXg4Nl82NC9iemlwMi0xLjAuOC1nY2MtOS4yLjAtaHRhbmFmNiIsWyJkZWZhdWx0Il09MCxbImZ1bGxOYW1lIl09ImJ6aXAyLTEuMC44LWdjYy05LjIuMC1odGFuYWY2IixbImxvYWRPcmRlciJdPTUscHJvcFQ9e30sWyJzaG9ydCJdPSJiemlwMi0xLjAuOC1nY2MtOS4yLjAtaHRhbmFmNiIsWyJzdGF0dXMiXT0iYWN0aXZlIix9LFsiaGlzYXQyLTIuMS4wLWdjYy03LjIuMC1icmFkd2o2Il09e1siRk4iXT0iL2N0YS9hcHBzL3NoYXJlL3NwYWNrL21vZHVsZXMvbGludXgtdWJ1bnR1MTYuMDQteDg2XzY0L2hpc2F0Mi0yLjEuMC1nY2MtNy4yLjAtYnJhZHdqNiIsWyJkZWZhdWx0Il09MCxbImZ1bGxOYW1lIl09Imhpc2F0Mi0y
+SLURM_JOB_CPUS_PER_NODE=20
+SLURM_CLUSTER_NAME=sabanci
+SLURM_GTIDS=0
+SLURM_SUBMIT_HOST=login.hpc.sabanciuniv.edu
+_ModuleTable008_=ZmlsZXMvQ29yZSIsWyJ2ZXJzaW9uIl09Mix9
+SLURM_JOB_PARTITION=mid
+BASH_ENV=/usr/share/lmod/lmod/init/bash
+LOGNAME=hhakanoglu
+LMOD_arch=x86_64
+MODULEPATH_CTA1=/cta/apps/share/spack/modules/linux-ubuntu16.04-ivybridge
+GPU_DEVICE_ORDINAL=NoDevFiles
+SLURM_JOB_ACCOUNT=users
+SSH_CONNECTION=10.50.120.74 60405 10.39.60.250 22
+XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop
+SLURM_JOB_NUM_NODES=1
+MODULEPATH_CTA=/cta/apps/share/spack/modules/linux-ubuntu16.04-x86_64
+MODULESHOME=/usr/share/lmod/lmod
+PKG_CONFIG_PATH=/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/ncurses-6.1-6mg5k75pxa2xpge34s4wgj7d52r4dkva/lib/pkgconfig:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/htslib-1.9-63u3uewd7gbbs5tyzsnw5hzjib2dja2v/lib/pkgconfig:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/xz-5.2.4-34oyu4x6dzjhputuhgiy5dvx2ngrxusl/lib/pkgconfig:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/zlib-1.2.11-dduf4e5ed6sfqrgo2rkshdzqeojlywvg/lib/pkgconfig
+LMOD_FULL_SETTARG_SUPPORT=no
+CMAKE_PREFIX_PATH=/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/samtools-1.9-jt3wqevyys7j23kbd5hhw6wyqy7husvi:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/ncurses-6.1-6mg5k75pxa2xpge34s4wgj7d52r4dkva:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/bzip2-1.0.8-htanaf6lwllsbmyp5blqrw4p7oumoeqd:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/htslib-1.9-63u3uewd7gbbs5tyzsnw5hzjib2dja2v:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/xz-5.2.4-34oyu4x6dzjhputuhgiy5dvx2ngrxusl:/cta/apps/opt/spack/linux-ubuntu16.04-ivybridge/gcc-9.2.0/zlib-1.2.11-dduf4e5ed6sfqrgo2rkshdzqeojlywvg:/cta/apps/opt/spack/linux-ubuntu16.04-x86_64/gcc-7.2.0/hisat2-2.1.0-bradwj6td5r6chzooylumjyf5c75fq2p
+DISPLAY=localhost:10.0
+XDG_RUNTIME_DIR=/run/user/1000196
+_ModuleTable006_=cFQ9e30sWyJzaG9ydCJdPSJ4ei01LjIuNC1nY2MtOS4yLjAtMzRveXU0eCIsWyJzdGF0dXMiXT0iYWN0aXZlIix9LFsiemxpYi0xLjIuMTEtZ2NjLTkuMi4wLWRkdWY0ZTUiXT17WyJGTiJdPSIvY3RhL2FwcHMvc2hhcmUvc3BhY2svbW9kdWxlcy9saW51eC11YnVudHUxNi4wNC14ODZfNjQvemxpYi0xLjIuMTEtZ2NjLTkuMi4wLWRkdWY0ZTUiLFsiZGVmYXVsdCJdPTAsWyJmdWxsTmFtZSJdPSJ6bGliLTEuMi4xMS1nY2MtOS4yLjAtZGR1ZjRlNSIsWyJsb2FkT3JkZXIiXT0yLHByb3BUPXt9LFsic2hvcnQiXT0iemxpYi0xLjIuMTEtZ2NjLTkuMi4wLWRkdWY0ZTUiLFsic3RhdHVzIl09ImFjdGl2ZSIsfSx9LG1wYXRoQT17Ii9jdGEvYXBwcy9zaGFyZS9zcGFjay9tb2R1bGVz
+LMOD_DIR=/usr/share/lmod/lmod/libexec
+LMOD_COLORIZE=yes
+BASH_FUNC_module%%=() {  eval $($LMOD_CMD bash "$@");
+ [ $? = 0 ] && eval $(${LMOD_SETTARG_CMD:-:} -s sh)
+}
+_=/usr/bin/env
+======================================================================================
+
+======================================================================================
+Setting stack size to unlimited...
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 1031486
+max locked memory       (kbytes, -l) unlimited
+max memory size         (kbytes, -m) 256000000
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 1031486
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+
+======================================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_1_1.fq.gz
+amelRNA_1_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:00
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:08:06
+29620775 reads; of these:
+  29620775 (100.00%) were paired; of these:
+    3043941 (10.28%) aligned concordantly 0 times
+    26052087 (87.95%) aligned concordantly exactly 1 time
+    524747 (1.77%) aligned concordantly >1 times
+    ----
+    3043941 pairs aligned concordantly 0 times; of these:
+      224888 (7.39%) aligned discordantly 1 time
+    ----
+    2819053 pairs aligned 0 times concordantly or discordantly; of these:
+      5638106 mates make up the pairs; of these:
+        3808384 (67.55%) aligned 0 times
+        1773576 (31.46%) aligned exactly 1 time
+        56146 (1.00%) aligned >1 times
+93.57% overall alignment rate
+Time searching: 00:08:06
+Overall time: 00:08:06
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_1_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_2_1.fq.gz
+amelRNA_2_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:00
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:07:52
+30911037 reads; of these:
+  30911037 (100.00%) were paired; of these:
+    2989713 (9.67%) aligned concordantly 0 times
+    27242581 (88.13%) aligned concordantly exactly 1 time
+    678743 (2.20%) aligned concordantly >1 times
+    ----
+    2989713 pairs aligned concordantly 0 times; of these:
+      274299 (9.17%) aligned discordantly 1 time
+    ----
+    2715414 pairs aligned 0 times concordantly or discordantly; of these:
+      5430828 mates make up the pairs; of these:
+        3572385 (65.78%) aligned 0 times
+        1785949 (32.89%) aligned exactly 1 time
+        72494 (1.33%) aligned >1 times
+94.22% overall alignment rate
+Time searching: 00:07:52
+Overall time: 00:07:52
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_2_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_3_1.fq.gz
+amelRNA_3_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:00
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:08:00
+31395825 reads; of these:
+  31395825 (100.00%) were paired; of these:
+    2851178 (9.08%) aligned concordantly 0 times
+    27974281 (89.10%) aligned concordantly exactly 1 time
+    570366 (1.82%) aligned concordantly >1 times
+    ----
+    2851178 pairs aligned concordantly 0 times; of these:
+      272230 (9.55%) aligned discordantly 1 time
+    ----
+    2578948 pairs aligned 0 times concordantly or discordantly; of these:
+      5157896 mates make up the pairs; of these:
+        3474419 (67.36%) aligned 0 times
+        1598387 (30.99%) aligned exactly 1 time
+        85090 (1.65%) aligned >1 times
+94.47% overall alignment rate
+Time searching: 00:08:00
+Overall time: 00:08:00
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_3_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_4_1.fq.gz
+amelRNA_4_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:01
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:08:18
+32112536 reads; of these:
+  32112536 (100.00%) were paired; of these:
+    3146264 (9.80%) aligned concordantly 0 times
+    28432382 (88.54%) aligned concordantly exactly 1 time
+    533890 (1.66%) aligned concordantly >1 times
+    ----
+    3146264 pairs aligned concordantly 0 times; of these:
+      228868 (7.27%) aligned discordantly 1 time
+    ----
+    2917396 pairs aligned 0 times concordantly or discordantly; of these:
+      5834792 mates make up the pairs; of these:
+        3834335 (65.72%) aligned 0 times
+        1924386 (32.98%) aligned exactly 1 time
+        76071 (1.30%) aligned >1 times
+94.03% overall alignment rate
+Time searching: 00:08:19
+Overall time: 00:08:20
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_4_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_5_1.fq.gz
+amelRNA_5_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:00
+Time loading reference: 00:00:01
+Multiseed full-index search: 00:08:04
+32081947 reads; of these:
+  32081947 (100.00%) were paired; of these:
+    3077256 (9.59%) aligned concordantly 0 times
+    28367297 (88.42%) aligned concordantly exactly 1 time
+    637394 (1.99%) aligned concordantly >1 times
+    ----
+    3077256 pairs aligned concordantly 0 times; of these:
+      279106 (9.07%) aligned discordantly 1 time
+    ----
+    2798150 pairs aligned 0 times concordantly or discordantly; of these:
+      5596300 mates make up the pairs; of these:
+        3662422 (65.44%) aligned 0 times
+        1867603 (33.37%) aligned exactly 1 time
+        66275 (1.18%) aligned >1 times
+94.29% overall alignment rate
+Time searching: 00:08:05
+Overall time: 00:08:05
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_5_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_6_1.fq.gz
+amelRNA_6_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:01
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:08:31
+31950610 reads; of these:
+  31950610 (100.00%) were paired; of these:
+    2901257 (9.08%) aligned concordantly 0 times
+    28591415 (89.49%) aligned concordantly exactly 1 time
+    457938 (1.43%) aligned concordantly >1 times
+    ----
+    2901257 pairs aligned concordantly 0 times; of these:
+      275668 (9.50%) aligned discordantly 1 time
+    ----
+    2625589 pairs aligned 0 times concordantly or discordantly; of these:
+      5251178 mates make up the pairs; of these:
+        3466146 (66.01%) aligned 0 times
+        1729889 (32.94%) aligned exactly 1 time
+        55143 (1.05%) aligned >1 times
+94.58% overall alignment rate
+Time searching: 00:08:31
+Overall time: 00:08:32
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_6_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_7_1.fq.gz
+amelRNA_7_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:01
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:07:56
+30718531 reads; of these:
+  30718531 (100.00%) were paired; of these:
+    3192553 (10.39%) aligned concordantly 0 times
+    27128898 (88.31%) aligned concordantly exactly 1 time
+    397080 (1.29%) aligned concordantly >1 times
+    ----
+    3192553 pairs aligned concordantly 0 times; of these:
+      395834 (12.40%) aligned discordantly 1 time
+    ----
+    2796719 pairs aligned 0 times concordantly or discordantly; of these:
+      5593438 mates make up the pairs; of these:
+        3747478 (67.00%) aligned 0 times
+        1778449 (31.80%) aligned exactly 1 time
+        67511 (1.21%) aligned >1 times
+93.90% overall alignment rate
+Time searching: 00:07:56
+Overall time: 00:07:57
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_7_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_8_1.fq.gz
+amelRNA_8_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:01
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:07:38
+30008714 reads; of these:
+  30008714 (100.00%) were paired; of these:
+    2862045 (9.54%) aligned concordantly 0 times
+    26619351 (88.71%) aligned concordantly exactly 1 time
+    527318 (1.76%) aligned concordantly >1 times
+    ----
+    2862045 pairs aligned concordantly 0 times; of these:
+      265020 (9.26%) aligned discordantly 1 time
+    ----
+    2597025 pairs aligned 0 times concordantly or discordantly; of these:
+      5194050 mates make up the pairs; of these:
+        3406388 (65.58%) aligned 0 times
+        1744505 (33.59%) aligned exactly 1 time
+        43157 (0.83%) aligned >1 times
+94.32% overall alignment rate
+Time searching: 00:07:38
+Overall time: 00:07:39
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_8_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_9_1.fq.gz
+amelRNA_9_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:00
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:07:49
+30743620 reads; of these:
+  30743620 (100.00%) were paired; of these:
+    2952138 (9.60%) aligned concordantly 0 times
+    27287384 (88.76%) aligned concordantly exactly 1 time
+    504098 (1.64%) aligned concordantly >1 times
+    ----
+    2952138 pairs aligned concordantly 0 times; of these:
+      322673 (10.93%) aligned discordantly 1 time
+    ----
+    2629465 pairs aligned 0 times concordantly or discordantly; of these:
+      5258930 mates make up the pairs; of these:
+        3542104 (67.35%) aligned 0 times
+        1669364 (31.74%) aligned exactly 1 time
+        47462 (0.90%) aligned >1 times
+94.24% overall alignment rate
+Time searching: 00:07:49
+Overall time: 00:07:49
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_9_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_10_1.fq.gz
+amelRNA_10_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:00
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:08:02
+31864855 reads; of these:
+  31864855 (100.00%) were paired; of these:
+    3886445 (12.20%) aligned concordantly 0 times
+    27451238 (86.15%) aligned concordantly exactly 1 time
+    527172 (1.65%) aligned concordantly >1 times
+    ----
+    3886445 pairs aligned concordantly 0 times; of these:
+      248683 (6.40%) aligned discordantly 1 time
+    ----
+    3637762 pairs aligned 0 times concordantly or discordantly; of these:
+      7275524 mates make up the pairs; of these:
+        5078948 (69.81%) aligned 0 times
+        2128648 (29.26%) aligned exactly 1 time
+        67928 (0.93%) aligned >1 times
+92.03% overall alignment rate
+Time searching: 00:08:02
+Overall time: 00:08:02
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_10_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_11_1.fq.gz
+amelRNA_11_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:01
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:07:53
+30573422 reads; of these:
+  30573422 (100.00%) were paired; of these:
+    4804904 (15.72%) aligned concordantly 0 times
+    25321677 (82.82%) aligned concordantly exactly 1 time
+    446841 (1.46%) aligned concordantly >1 times
+    ----
+    4804904 pairs aligned concordantly 0 times; of these:
+      274955 (5.72%) aligned discordantly 1 time
+    ----
+    4529949 pairs aligned 0 times concordantly or discordantly; of these:
+      9059898 mates make up the pairs; of these:
+        7335832 (80.97%) aligned 0 times
+        1665960 (18.39%) aligned exactly 1 time
+        58106 (0.64%) aligned >1 times
+88.00% overall alignment rate
+Time searching: 00:07:53
+Overall time: 00:07:54
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_11_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_12_1.fq.gz
+amelRNA_12_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:00
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:08:07
+32571115 reads; of these:
+  32571115 (100.00%) were paired; of these:
+    3248715 (9.97%) aligned concordantly 0 times
+    28941492 (88.86%) aligned concordantly exactly 1 time
+    380908 (1.17%) aligned concordantly >1 times
+    ----
+    3248715 pairs aligned concordantly 0 times; of these:
+      402658 (12.39%) aligned discordantly 1 time
+    ----
+    2846057 pairs aligned 0 times concordantly or discordantly; of these:
+      5692114 mates make up the pairs; of these:
+        3967253 (69.70%) aligned 0 times
+        1666043 (29.27%) aligned exactly 1 time
+        58818 (1.03%) aligned >1 times
+93.91% overall alignment rate
+Time searching: 00:08:07
+Overall time: 00:08:07
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_12_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_13_1.fq.gz
+amelRNA_13_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:00
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:08:06
+31652897 reads; of these:
+  31652897 (100.00%) were paired; of these:
+    2895120 (9.15%) aligned concordantly 0 times
+    28290713 (89.38%) aligned concordantly exactly 1 time
+    467064 (1.48%) aligned concordantly >1 times
+    ----
+    2895120 pairs aligned concordantly 0 times; of these:
+      264185 (9.13%) aligned discordantly 1 time
+    ----
+    2630935 pairs aligned 0 times concordantly or discordantly; of these:
+      5261870 mates make up the pairs; of these:
+        3478899 (66.12%) aligned 0 times
+        1713921 (32.57%) aligned exactly 1 time
+        69050 (1.31%) aligned >1 times
+94.50% overall alignment rate
+Time searching: 00:08:07
+Overall time: 00:08:07
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_13_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_14_1.fq.gz
+amelRNA_14_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:00
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:08:09
+29628405 reads; of these:
+  29628405 (100.00%) were paired; of these:
+    3312191 (11.18%) aligned concordantly 0 times
+    25695979 (86.73%) aligned concordantly exactly 1 time
+    620235 (2.09%) aligned concordantly >1 times
+    ----
+    3312191 pairs aligned concordantly 0 times; of these:
+      386963 (11.68%) aligned discordantly 1 time
+    ----
+    2925228 pairs aligned 0 times concordantly or discordantly; of these:
+      5850456 mates make up the pairs; of these:
+        3945462 (67.44%) aligned 0 times
+        1828348 (31.25%) aligned exactly 1 time
+        76646 (1.31%) aligned >1 times
+93.34% overall alignment rate
+Time searching: 00:08:09
+Overall time: 00:08:09
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_14_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_15_1.fq.gz
+amelRNA_15_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:00
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:08:03
+31708754 reads; of these:
+  31708754 (100.00%) were paired; of these:
+    3411463 (10.76%) aligned concordantly 0 times
+    27766082 (87.57%) aligned concordantly exactly 1 time
+    531209 (1.68%) aligned concordantly >1 times
+    ----
+    3411463 pairs aligned concordantly 0 times; of these:
+      395998 (11.61%) aligned discordantly 1 time
+    ----
+    3015465 pairs aligned 0 times concordantly or discordantly; of these:
+      6030930 mates make up the pairs; of these:
+        4120077 (68.32%) aligned 0 times
+        1843322 (30.56%) aligned exactly 1 time
+        67531 (1.12%) aligned >1 times
+93.50% overall alignment rate
+Time searching: 00:08:03
+Overall time: 00:08:03
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_15_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_16_1.fq.gz
+amelRNA_16_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:01
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:07:45
+29853017 reads; of these:
+  29853017 (100.00%) were paired; of these:
+    3976296 (13.32%) aligned concordantly 0 times
+    25349172 (84.91%) aligned concordantly exactly 1 time
+    527549 (1.77%) aligned concordantly >1 times
+    ----
+    3976296 pairs aligned concordantly 0 times; of these:
+      349042 (8.78%) aligned discordantly 1 time
+    ----
+    3627254 pairs aligned 0 times concordantly or discordantly; of these:
+      7254508 mates make up the pairs; of these:
+        5596157 (77.14%) aligned 0 times
+        1597856 (22.03%) aligned exactly 1 time
+        60495 (0.83%) aligned >1 times
+90.63% overall alignment rate
+Time searching: 00:07:45
+Overall time: 00:07:46
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_16_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_18_1.fq.gz
+amelRNA_18_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:00
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:07:49
+31176380 reads; of these:
+  31176380 (100.00%) were paired; of these:
+    2907697 (9.33%) aligned concordantly 0 times
+    27654760 (88.70%) aligned concordantly exactly 1 time
+    613923 (1.97%) aligned concordantly >1 times
+    ----
+    2907697 pairs aligned concordantly 0 times; of these:
+      312042 (10.73%) aligned discordantly 1 time
+    ----
+    2595655 pairs aligned 0 times concordantly or discordantly; of these:
+      5191310 mates make up the pairs; of these:
+        3428614 (66.05%) aligned 0 times
+        1695624 (32.66%) aligned exactly 1 time
+        67072 (1.29%) aligned >1 times
+94.50% overall alignment rate
+Time searching: 00:07:49
+Overall time: 00:07:49
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_18_hybrid.bam
+===============================================================================
+Aligning reads to the indexed genome using HISAT2 and generating sorted BAM files using Samtools...
+amelRNA_19_1.fq.gz
+amelRNA_19_2.fq.gz
+===============================================================================
+Time loading forward index: 00:00:01
+Time loading reference: 00:00:00
+Multiseed full-index search: 00:07:42
+30699600 reads; of these:
+  30699600 (100.00%) were paired; of these:
+    3246452 (10.57%) aligned concordantly 0 times
+    26893801 (87.60%) aligned concordantly exactly 1 time
+    559347 (1.82%) aligned concordantly >1 times
+    ----
+    3246452 pairs aligned concordantly 0 times; of these:
+      388537 (11.97%) aligned discordantly 1 time
+    ----
+    2857915 pairs aligned 0 times concordantly or discordantly; of these:
+      5715830 mates make up the pairs; of these:
+        3958967 (69.26%) aligned 0 times
+        1683367 (29.45%) aligned exactly 1 time
+        73496 (1.29%) aligned >1 times
+93.55% overall alignment rate
+Time searching: 00:07:42
+Overall time: 00:07:43
+[bam_sort_core] merging from 20 files and 20 in-memory blocks...
+
+HISAT2 finished alignment. Return code is 0
+-------------------------------------------
+HISAT2 finished alignment. Sorted BAM files can be found in:
+/cta/users/hhakanoglu/amel_rnaseq_1001/bam_raw/amelRNA_19_hybrid.bam
+===============================================================================
